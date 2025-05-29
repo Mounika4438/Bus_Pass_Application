@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Applicant Form</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 40px;
+    }
+
+    .container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+
+    }
+
+    .form-section, .photo-section {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    }
+
+    .form-section {
+    width: 1100px;
+    height: 400px;
+    }
+
+    .photo-section {
+    width: 600px;
+    }
+
+    h3 {
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 8px;
+    color: #1976d2;
+    margin-top: 0;
+    }
+
+    label {
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    }
+
+    .form-row {
+    display: flex;
+    gap: 30px;
+    }
+
+    .form-row > div {
+    flex: 2;
+    }
+
+    .photo-placeholder {
+    border: 2px solid #333;
+    width: 3.5cm;
+    height: 4.5cm;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    background-image: url('https://via.placeholder.com/100x150?text=Photo');
+    background-size: cover;
+    background-position: center;
+    }
+
+    .upload-btn {
+    background-color: #e53935;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    }
+
+    .photo-note {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    }
+    .mobile-input {
+    display: flex;
+    align-items: center;
+    }
+
+    .mobile-input span {
+    padding: 12px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+    }
+
+    .mobile-input input {
+    flex: 1;
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+    margin: 0;
+    }
+    .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    }
+
+    .form-field {
+    flex: 1;
+    min-width: 220px;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+
+    .buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    }
+
+    button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .reset-btn {
+    background-color: #7d7d7d;
+    }
+
+    .fare-btn {
+    background-color: #d9534f;
+    }
+
+    .fare-btn:hover {
+background-color: #c9302c;
+    }
+
+    .reset-btn:hover {
+    background-color: #5a5a5a;
+    }
+
+    span.required {
+    color: red;
+    }
+    h1 {
+        text-align: center;
+        color: #f41357;
+        margin-bottom: 30px;
+        font-family: 'Georgia', serif;
+
+
+        font-style: calc();
+        }
+</style>
+</head>
+<body>
+<h1>Bus Pass Portal - Andhra Pradesh</h1>
+
+<div class="container">
+
+
+
+<div class="form-section">
+    <h3>APPLICANT DETAILS</h3>
+
+    <div class="form-row">
+    <div>
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter your name" required>
+    </div>
+    <br>
+    <div>
+        <label for="guardianName">Father's / Guardian's Name</label>
+        <input type="text" id="guardianName" placeholder="Enter Father's / Guardian's Name" required>
+    </div>
+    </div>
+
+    <div class="form-row">
+    <div>
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" required>
+    </div>
+    </div>
+</div>
+
+
+<div class="photo-section">
+    <h3>APPLICANT PHOTO</h3>
+    <p><strong>Photo Width:</strong> 3.5cms</p>
+    <div class="photo-placeholder"></div>
+    <p><strong>Photo Height:</strong> 4.5cms</p>
+
+    <input type="file" accept="image/jpeg" class="upload-btn" required>
+    <p class="photo-note">Upload JPEG format file. Size should be less than 1MB</p>
+</div>
+
+</div>
+<h3>PROOFS</h3>
+<div class="form-group">
+    <div class="form-field">
+    <label for="aadhaar">Aadhar Number</label>
+    <input type="text" id="aadhaar" placeholder="Enter Aadhar Number" />
+    </div>
+    <div class="form-field">
+    <label for="mobile">Mobile No <span style="color:red">*</span></label>
+    <div class="mobile-input">
+        <span>+91</span>
+        <input type="text" id="mobile" placeholder="Enter Mobile Number" />
+    </div>
+    </div>
+</div>
+
+
+<h3>RESIDENTIALS ADDRESS</h3>
+<div class="form-group">
+    <div class="form-field">
+    <label for="district">Select District :</label>
+<select id="district" name="district" required>
+    <option value="" disabled selected>Select District</option>
+    <option value="Anantapur">Anantapur</option>
+    <option value="Sri Sathya Sai">Sri Sathya Sai</option>
+    <option value="Chittoor">Chittoor</option>
+    <option value="Tirupati">Tirupati</option>
+    <option value="East Godavari">East Godavari</option>
+    <option value="Kakinada">Kakinada</option>
+    <option value="West Godavari">West Godavari</option>
+    <option value="Eluru">Eluru</option>
+    <option value="Guntur">Guntur</option>
+    <option value="Bapatla">Bapatla</option>
+    <option value="Palnadu">Palnadu</option>
+    <option value="Krishna">Krishna</option>
+    <option value="NTR">NTR</option>
+    <option value="Prakasam">Prakasam</option>
+    <option value="Sri Potti Sriramulu Nellore">Sri Potti Sriramulu Nellore</option>
+    <option value="Kurnool">Kurnool</option>
+    <option value="Nandyal">Nandyal</option>
+    <option value="Srikakulam">Srikakulam</option>
+    <option value="Vizianagaram">Vizianagaram</option>
+    <option value="Visakhapatnam">Visakhapatnam</option>
+    <option value="Alluri Sitharama Raju">Alluri Sitharama Raju</option>
+    <option value="Parvathipuram Manyam">Parvathipuram Manyam</option>
+    <option value="Kadapa">Kadapa (YSR Kadapa)</option>
+    <option value="Annamayya">Annamayya</option>
+    <option value="Konaseema">Konaseema</option>
+    <option value="Dr. B.R. Ambedkar Konaseema">Dr. B.R. Ambedkar Konaseema</option>
+</select>
+
+    </div>
+    <div class="form-field">
+    <label for="mandal">Mandal <span style="color:red">*</span></label>
+    <select id="mandal">
+        <option selected>CHIRALA</option>
+        <option>ONGOLE</option>
+        <option>VETAPALEM</option>
+        <option>INKOLLU</option>
+    </select>
+    </div>
+    <div class="form-field">
+    <label for="address">Address <span style="color:red">*</span></label>
+    <input type="text" id="address" placeholder="Enter Address" />
+    </div>
+</div>
+<h3>PASS CATEGORIES</h3>
+<div class="form-group">
+    <div class="form-field">
+    <label for="center">Center <span class="required">*</span></label>
+    <select id="center">
+        <option disabled selected>Select Center</option>
+        <option>Center A</option>
+        <option>Center B</option>
+        <option>Center C</option>
+    </select>
+    </div>
+    <div class="form-field">
+    <label for="passType">Pass Type <span class="required">*</span></label>
+    <select id="passType">
+        <option disabled selected>Select Pass Type</option>
+        <option>Monthly</option>
+        <option> Quarterly</option>
+        <option>Yearly</option>
+    </select>
+    </div>
+    <div class="form-field">
+    <label for="serviceType">Service Type <span class="required">*</span></label>
+    <select id="serviceType">
+        <option disabled selected>Service Type</option>
+        <option>General</option>
+        <option>AC</option>
+    </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="form-field">
+    <label for="renewal">Renewal Frequency <span class="required">*</span></label>
+    <select id="renewal">
+        <option disabled selected>Select Renewal Frequency</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Yearly</option>
+    </select>
+    </div>
+</div>
+
+
+<div class="buttons">
+    <button class="reset-btn">🔄 Reset</button>
+    <button class="fare-btn">📥 Get Fare Details</button>
+</div>
+
+
+</body>
+</html>
